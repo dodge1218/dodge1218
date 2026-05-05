@@ -8,6 +8,7 @@ AI infrastructure and application security researcher focused on MCP/server-side
 - Server-side auth, SSRF, and fetch controls
 - Default deployment exposure and misconfiguration risk
 - AI/ML open-source and model/tool integration security
+- Local-first AI infrastructure, context budgeting, and workflow analytics
 - Reproducible, non-destructive proof-of-concept workflows
 
 ## Disclosure practice
@@ -17,7 +18,9 @@ I prioritize coordinated disclosure, clear scope boundaries, deterministic repro
 ## Current public work
 
 - [ContextClaw](https://github.com/dodge1218/contextclaw), deterministic context budgeting for long-running OpenClaw agent sessions.
+- [PromptLens](https://github.com/dodge1218/promptlens), local-first AI usage analytics for exported conversations and workflow patterns.
 - [task-rag-mcp](https://github.com/dodge1218/task-rag-mcp), local MCP retrieval for task instructions, skills, and project memory.
+- [Breaking Apps Hackathon](https://github.com/dodge1218/breaking-apps-hackathon), AI-assisted Playwright regression checks for small-business websites.
 - [OpenClaw fork](https://github.com/dodge1218/openclaw), local-first personal AI assistant infrastructure.
 
 ## Public advisories

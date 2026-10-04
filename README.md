@@ -1,50 +1,60 @@
-# Ryan Vonbrubeck
+# Ryan Brubeck
 
-AI infrastructure and application security researcher focused on MCP/server-side tooling, agentic control planes, deployment trust boundaries, SSRF, authn/authz gaps, and coordinated disclosure.
+AI infrastructure and application security researcher focused on MCP/server-side tooling, agentic control planes, SSRF, authentication and authorization boundaries, unsafe execution, and coordinated disclosure.
 
-As of May 2026, my internal research ledger tracks 15 maintainer/platform-validated, accepted, or fix-track vulnerability reports, including 2 Critical and 8+ High-severity findings by conservative current bucketing. I do not count submitted or internally rated findings as wins until a maintainer, platform, advisory, fix, or case trail validates them.
+[Download my cybersecurity resume](./Ryan_Brubeck_Resume_Cybersecurity_2026.pdf)
 
-Alongside the public/fix-track work, I maintain a private, human-gated bounty research pipeline with 600+ local report/evidence artifacts and 25 reusable scanner patterns. The system is built around pinned-source review, non-destructive PoC transcripts, route/dedupe checks, adversarial triage, and private-route-first disclosure.
+## Security research
 
-## Research areas
+- **55 externally validated findings**: 6 Critical, 34 High/High-ish, and 15 Medium/lower, using a conservative evidence-gated ledger.
+- Ranked **#337 on the Microsoft Security Response Center 2026 Q2 Points Leaderboard**.
+- **AWS Security confirmed six implemented fixes** across `awslabs/mcp`, including SQL execution bypass, sensitive-data exposure, authentication-header logging, Kubernetes apply bypass, resource mutation bypass, and arbitrary file write.
+- **IBM MCP Context Forge** added public regression coverage for my Critical RestrictedPython sandbox escape; additional IBM work includes a published SSRF advisory.
+- **Google PR #3219** fixed a BigQuery ML allowlist bypass I reported.
 
-- MCP and agent/tool invocation trust boundaries
-- Server-side auth, SSRF, and fetch controls
-- Default deployment exposure and misconfiguration risk
-- AI/ML open-source and model/tool integration security
-- Local-first AI infrastructure, context budgeting, and workflow analytics
-- Reproducible, non-destructive proof-of-concept workflows
+I count a result only after a maintainer, platform, published advisory, fix, or case trail validates it. Scanner output and unconfirmed submissions are not counted as wins.
 
-## Disclosure practice
+## Public GitHub advisory credit
 
-I prioritize coordinated disclosure, clear scope boundaries, deterministic reproduction steps, and minimal-impact testing. Reports are written to help maintainers reproduce, patch, and verify issues quickly.
+GitHub's live [`credit:dodge1218` advisory index](https://github.com/advisories?query=credit%3Adodge1218) currently links these native public credits:
 
-My default report format is source-cited code review against pinned commits, a non-destructive reproduction path, root-cause and trust-boundary analysis, and concrete fix guidance. I use GitHub Private Vulnerability Reporting where enabled and direct maintainer channels otherwise.
+- [GHSA-rjr6-rcgv-9m7m](https://github.com/advisories/GHSA-rjr6-rcgv-9m7m) — MCP Ruby SDK DNS-rebinding / Host-Origin protection
+- [GHSA-vj7q-gjh5-988w](https://github.com/advisories/GHSA-vj7q-gjh5-988w) — MCP Python SDK WebSocket Host-Origin validation
+- [GHSA-hwpp-h97w-2h3j](https://github.com/advisories/GHSA-hwpp-h97w-2h3j) — Repomix local-file secret-scanning bypass
+- [GHSA-v3f4-w7r7-v3hm](https://github.com/advisories/GHSA-v3f4-w7r7-v3hm) — Uni-CLI browser-originated localhost requests
+- [GHSA-f3jg-756w-gm35](https://github.com/advisories/GHSA-f3jg-756w-gm35) — Gryph sensitive tool-payload filtering
 
-I separate scanners from submissions: scanner output is a lead, not a claim. A submission-grade report needs a real exposed entry point, a clear violated trust boundary, a reproducible non-destructive path, and an impact statement that ends at the exact loss or security consequence being claimed.
+## Additional published advisories from my research
 
-## Current public work
+- [GHSA-7hgr-7h44-33w2](https://github.com/advisories/GHSA-7hgr-7h44-33w2) — CamoFox MCP unauthenticated browser-control surface
+- [GHSA-xm98-3vcf-fph7](https://github.com/advisories/GHSA-xm98-3vcf-fph7) — IBM MCP Context Forge RestrictedPython sandbox escape
+- [GHSA-c7vv-9h9c-fvj4](https://github.com/IBM/mcp-context-forge/security/advisories/GHSA-c7vv-9h9c-fvj4) — IBM MCP Context Forge redirect-based SSRF bypass
+- [GHSA-f5pj-2738-996m](https://github.com/advisories/GHSA-f5pj-2738-996m), [GHSA-3x77-wg38-92r3](https://github.com/advisories/GHSA-3x77-wg38-92r3), and [GHSA-74hp-mggr-hv58](https://github.com/advisories/GHSA-74hp-mggr-hv58) — MCP Shell execution-security hardening
+- [GHSA-6xc5-4r68-67fc](https://github.com/advisories/GHSA-6xc5-4r68-67fc) — Langroid SQLChatAgent dangerous-function blocklist bypass
+- [GHSA-m2jq-w2wv-43fh](https://github.com/rmaher001/z2m-mcp/security/advisories/GHSA-m2jq-w2wv-43fh) — z2m-mcp unauthenticated Zigbee control
+- [GHSA-j7h9-2jh7-g967](https://github.com/advisories/GHSA-j7h9-2jh7-g967) — MCP SSH Tool path-policy bypass and token comparison
+- [GHSA-52cq-7v8r-62c6](https://github.com/advisories/GHSA-52cq-7v8r-62c6) — Google Maps MCP unauthenticated billed API access
+- [GHSA-8jr5-6gvj-rfpf](https://github.com/advisories/GHSA-8jr5-6gvj-rfpf) — MCP GitLab Server unauthenticated transport exposure
+- [GHSA-jj4w-pfgv-4mrm](https://github.com/obot-platform/obot/security/advisories/GHSA-jj4w-pfgv-4mrm) — Obot unauthenticated Owner/Admin mapping
+- [GHSA-2v5f-5r6w-p67r](https://github.com/advisories/GHSA-2v5f-5r6w-p67r) — MCP Registry OCI ownership validation fail-open
+- [GHSA-hv85-774v-26fg](https://github.com/advisories/GHSA-hv85-774v-26fg) — Auth Fetch MCP SSRF and disk exfiltration
+- [GHSA-pqmg-rq46-vm4m](https://github.com/triggerdotdev/trigger.dev/security/advisories/GHSA-pqmg-rq46-vm4m) — Trigger.dev unauthenticated MCP transport
+- [GHSA-c9xm-49cp-xcr9](https://github.com/advisories/GHSA-c9xm-49cp-xcr9) and [GHSA-9g45-5xwm-f3wc](https://github.com/advisories/GHSA-9g45-5xwm-f3wc) — MCP Rust SDK OAuth request steering and cross-origin header leakage
+- [GHSA-7xxm-gqxv-ph3v](https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-7xxm-gqxv-ph3v) — MaxKB server-side request forgery
+- [GHSA-mrq8-fv7v-hhjg](https://github.com/advisories/GHSA-mrq8-fv7v-hhjg) and [GHSA-76pr-5669-3xf5](https://github.com/sooperset/mcp-atlassian/security/advisories/GHSA-76pr-5669-3xf5) — MCP Atlassian local-file access and OAuth backup permissions
+- [GHSA-6prh-2h8m-c8cw](https://github.com/modelcontextprotocol/typescript-sdk/security/advisories/GHSA-6prh-2h8m-c8cw) — MCP TypeScript SDK cross-origin redirect leakage
 
-- [ContextClaw](https://github.com/dodge1218/contextclaw), deterministic context budgeting for long-running OpenClaw agent sessions.
-- [PromptLens](https://github.com/dodge1218/promptlens), local-first AI usage analytics for exported conversations and workflow patterns. Related writeup: [Google/Gemini memory import prompts](https://dev.to/vonb/google-just-unlocked-something-huge-with-gemini-memory-import-heres-how-to-actually-profit-from-2ckf).
-- [task-rag-mcp](https://github.com/dodge1218/task-rag-mcp), local MCP retrieval for task instructions, skills, and project memory.
-- [Breaking Apps Hackathon](https://github.com/dodge1218/breaking-apps-hackathon), AI-assisted Playwright regression checks for small-business websites.
-- [OpenClaw fork](https://github.com/dodge1218/openclaw), local-first personal AI assistant infrastructure.
+Private or unpublished advisories are intentionally omitted until their maintainers publish them.
 
-## Public advisories
+## Research practice
 
-- GHSA-m2jq-w2wv-43fh, z2m-mcp, High
-- GHSA-j7h9-2jh7-g967, mcp-ssh-tool, High
-- GHSA-52cq-7v8r-62c6, google-maps-mcp, High
-- GHSA-74mx-837f-7x87, Critical
-- GHSA-f3jg-756w-gm35, gryph, published with reporter credit
-- GHSA-8jr5-6gvj-rfpf, mcp-gitlab-server, High, published/patched, CVE-2026-44895
+My reports use pinned-source review, non-destructive proof-of-concept transcripts, negative controls, adversarial falsification, private-route-first disclosure, and patch verification. The goal is a report a maintainer can reproduce, fix, and safely publish—not a scanner-generated claim.
 
-## Current focus
+Current research areas include MCP and agent/tool trust boundaries, server-side authentication, SSRF and redirect controls, unsafe command execution, sandbox escapes, authorization failures, path traversal, and insecure deployment defaults.
 
-- MCP transport authentication and browser/control-plane exposure
-- Command execution, SSRF, IDOR/authz, path/archive traversal, and default-credential classes
-- AI-agent tool trust boundaries and prompt-to-tool escalation paths
-- Reproducible local PoCs and patch-validation workflows
-- Agentic vulnerability-research control rooms: target intake, scanner routing, evidence capture, route gates, and human review
-- Smart-contract and protocol bounty work where scope, value at risk, and proof quality are clear
+## Public projects
+
+- [ContextClaw](https://github.com/dodge1218/contextclaw) — deterministic context budgeting for long-running agent sessions
+- [PromptLens](https://github.com/dodge1218/promptlens) — local-first AI usage analytics for exported conversations
+- [task-rag-mcp](https://github.com/dodge1218/task-rag-mcp) — local MCP retrieval for task instructions and project memory
+- [Breaking Apps Hackathon](https://github.com/dodge1218/breaking-apps-hackathon) — AI-assisted Playwright regression checks

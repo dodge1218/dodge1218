@@ -7,10 +7,10 @@ AI infrastructure and application security researcher focused on MCP/server-side
 ## Security research
 
 - **55 externally validated findings**: 6 Critical, 34 High/High-ish, and 15 Medium/lower, using a conservative evidence-gated ledger.
-- Ranked **#337 on the Microsoft Security Response Center 2026 Q2 Points Leaderboard**.
-- **AWS Security confirmed six implemented fixes** across `awslabs/mcp`, including SQL execution bypass, sensitive-data exposure, authentication-header logging, Kubernetes apply bypass, resource mutation bypass, and arbitrary file write.
-- **IBM MCP Context Forge** added public regression coverage for my Critical RestrictedPython sandbox escape; additional IBM work includes a published SSRF advisory.
-- **Google PR #3219** fixed a BigQuery ML allowlist bypass I reported.
+- Ranked **#337 on the [Microsoft Security Response Center 2026 Q2 Points Leaderboard](https://www.microsoft.com/en-us/msrc/blog/2026/07/congratulations-to-the-top-msrc-2026-q2-security-researchers/)**.
+- **AWS Security confirmed six implemented fixes** across `awslabs/mcp`, including SQL execution bypass, sensitive-data exposure, authentication-header logging, Kubernetes apply bypass, resource mutation bypass, and arbitrary file write. See the [`awslabs/mcp` published advisory index](https://github.com/awslabs/mcp/security/advisories).
+- **IBM MCP Context Forge** added public regression coverage for my [Critical RestrictedPython sandbox escape](https://github.com/advisories/GHSA-xm98-3vcf-fph7); additional IBM work includes a [published SSRF advisory](https://github.com/IBM/mcp-context-forge/security/advisories/GHSA-c7vv-9h9c-fvj4).
+- **[Google PR #3219](https://github.com/googleapis/mcp-toolbox/pull/3219)** fixed a BigQuery/ClickHouse identifier-validation issue I reported.
 
 I count a result only after a maintainer, platform, published advisory, fix, or case trail validates it. Scanner output and unconfirmed submissions are not counted as wins.
 

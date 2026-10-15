@@ -6,7 +6,8 @@ AI infrastructure and application security researcher focused on MCP/server-side
 
 ## Security research
 
-- **55 externally validated findings**: 6 Critical, 34 High/High-ish, and 15 Medium/lower, using a conservative evidence-gated ledger.
+- **57 externally validated findings**, including **41 High/Critical outcomes**, using a conservative evidence-gated ledger.
+- **16 directly attributable public records** across vendor advisories, security bulletins, releases, and maintainer-confirmed issues.
 - Ranked **#337 on the [Microsoft Security Response Center 2026 Q2 Points Leaderboard](https://www.microsoft.com/en-us/msrc/blog/2026/07/congratulations-to-the-top-msrc-2026-q2-security-researchers/)**.
 - **AWS Security confirmed six implemented fixes** across `awslabs/mcp`, including SQL execution bypass, sensitive-data exposure, authentication-header logging, Kubernetes apply bypass, resource mutation bypass, and arbitrary file write. See the [`awslabs/mcp` published advisory index](https://github.com/awslabs/mcp/security/advisories).
 - **IBM MCP Context Forge** added public regression coverage for my [Critical RestrictedPython sandbox escape](https://github.com/advisories/GHSA-xm98-3vcf-fph7); additional IBM work includes a [published SSRF advisory](https://github.com/IBM/mcp-context-forge/security/advisories/GHSA-c7vv-9h9c-fvj4).
@@ -14,37 +15,28 @@ AI infrastructure and application security researcher focused on MCP/server-side
 
 I count a result only after a maintainer, platform, published advisory, fix, or case trail validates it. Scanner output and unconfirmed submissions are not counted as wins.
 
-## Public GitHub advisory credit
+## Publicly attributable security work
 
-GitHub's live [`credit:dodge1218` advisory index](https://github.com/advisories?query=credit%3Adodge1218) currently links these native public credits:
+These records directly name Ryan, `dodge1218`, or vonbrubeck as reporter, finder, issue author, or coordinated-disclosure contributor:
 
-- [GHSA-rjr6-rcgv-9m7m](https://github.com/advisories/GHSA-rjr6-rcgv-9m7m) — MCP Ruby SDK DNS-rebinding / Host-Origin protection
-- [GHSA-vj7q-gjh5-988w](https://github.com/advisories/GHSA-vj7q-gjh5-988w) — MCP Python SDK WebSocket Host-Origin validation
+- [AWS Security Bulletin AWS-2026-104](https://aws.amazon.com/security/security-bulletins/2026-104-aws/) / [GHSA-fph8-pg5w-78fv](https://github.com/advisories/GHSA-fph8-pg5w-78fv) — PostgreSQL MCP read-only enforcement bypass leading to OS command execution under specific elevated database-role prerequisites
+- [GHSA-jj4w-pfgv-4mrm](https://github.com/obot-platform/obot/security/advisories/GHSA-jj4w-pfgv-4mrm) — Obot Docker quickstart mapped reachable unauthenticated users to Owner/Admin capabilities
+- [GHSA-vj7q-gjh5-988w](https://github.com/advisories/GHSA-vj7q-gjh5-988w) — MCP Python SDK WebSocket Host/Origin validation
+- [GHSA-rjr6-rcgv-9m7m](https://github.com/advisories/GHSA-rjr6-rcgv-9m7m) — MCP Ruby SDK DNS-rebinding and Host/Origin protection
+- [GHSA-5h93-6whr-6q8j](https://github.com/advisories/GHSA-5h93-6whr-6q8j) — MCP Python SDK cross-origin redirect forwarding of custom headers and request bodies
+- [GHSA-q3h7-gpc9-2rxc](https://github.com/SigNoz/signoz/security/advisories/GHSA-q3h7-gpc9-2rxc) — SigNoz Querybuilder SQL injection through telemetry key names
+- [GHSA-m2jq-w2wv-43fh](https://github.com/rmaher001/z2m-mcp/security/advisories/GHSA-m2jq-w2wv-43fh) — unauthenticated Zigbee2MQTT MCP control on reachable SSE deployments
+- [GHSA-j7h9-2jh7-g967](https://github.com/advisories/GHSA-j7h9-2jh7-g967) — MCP SSH Tool path-policy bypass and bearer-token comparison weakness
 - [GHSA-hwpp-h97w-2h3j](https://github.com/advisories/GHSA-hwpp-h97w-2h3j) — Repomix local-file secret-scanning bypass
-- [GHSA-v3f4-w7r7-v3hm](https://github.com/advisories/GHSA-v3f4-w7r7-v3hm) — Uni-CLI browser-originated localhost requests
-- [GHSA-f3jg-756w-gm35](https://github.com/advisories/GHSA-f3jg-756w-gm35) — Gryph sensitive tool-payload filtering
+- [GHSA-f3jg-756w-gm35](https://github.com/advisories/GHSA-f3jg-756w-gm35) — Gryph sensitive tool-payload storage
+- [Heimdall MCP v0.2.1](https://github.com/sarva-20/heimdall-mcp/releases/tag/v0.2.1) — command-injection remediation and public release credit
+- [mcp-shell issue #13](https://github.com/sonirico/mcp-shell/issues/13) — execution-security finding cluster fixed in v0.6.0; counted as one root cause
+- [Termux MCP issue #2](https://github.com/termuxgpt/termux-mcp/issues/2) — default external bind and unauthenticated command surface
+- [x64dbg MCP v1.0.8](https://github.com/SetsunaYukiOvO/x64dbg-mcp/releases/tag/v1.0.8) — browser-originated local MCP security flaw and shipped hardening
+- [DeepCode issue #128](https://github.com/HKUDS/DeepCode/issues/128) — unsafe shell execution in MCP command tools leading to sandbox hardening
+- [MariaDB MCP issue #55](https://github.com/MariaDB/mcp/issues/55) / [fix commit](https://github.com/MariaDB/mcp/commit/64876fb1a4cb81bf51564c46eb60401097c067cc) — sensitive `SHOW` variants bypassed the intended read-only policy
 
-## Additional published advisories from my research
-
-- [GHSA-7hgr-7h44-33w2](https://github.com/advisories/GHSA-7hgr-7h44-33w2) — CamoFox MCP unauthenticated browser-control surface
-- [GHSA-xm98-3vcf-fph7](https://github.com/advisories/GHSA-xm98-3vcf-fph7) — IBM MCP Context Forge RestrictedPython sandbox escape
-- [GHSA-c7vv-9h9c-fvj4](https://github.com/IBM/mcp-context-forge/security/advisories/GHSA-c7vv-9h9c-fvj4) — IBM MCP Context Forge redirect-based SSRF bypass
-- [GHSA-f5pj-2738-996m](https://github.com/advisories/GHSA-f5pj-2738-996m), [GHSA-3x77-wg38-92r3](https://github.com/advisories/GHSA-3x77-wg38-92r3), and [GHSA-74hp-mggr-hv58](https://github.com/advisories/GHSA-74hp-mggr-hv58) — MCP Shell execution-security hardening
-- [GHSA-6xc5-4r68-67fc](https://github.com/advisories/GHSA-6xc5-4r68-67fc) — Langroid SQLChatAgent dangerous-function blocklist bypass
-- [GHSA-m2jq-w2wv-43fh](https://github.com/rmaher001/z2m-mcp/security/advisories/GHSA-m2jq-w2wv-43fh) — z2m-mcp unauthenticated Zigbee control
-- [GHSA-j7h9-2jh7-g967](https://github.com/advisories/GHSA-j7h9-2jh7-g967) — MCP SSH Tool path-policy bypass and token comparison
-- [GHSA-52cq-7v8r-62c6](https://github.com/advisories/GHSA-52cq-7v8r-62c6) — Google Maps MCP unauthenticated billed API access
-- [GHSA-8jr5-6gvj-rfpf](https://github.com/advisories/GHSA-8jr5-6gvj-rfpf) — MCP GitLab Server unauthenticated transport exposure
-- [GHSA-jj4w-pfgv-4mrm](https://github.com/obot-platform/obot/security/advisories/GHSA-jj4w-pfgv-4mrm) — Obot unauthenticated Owner/Admin mapping
-- [GHSA-2v5f-5r6w-p67r](https://github.com/advisories/GHSA-2v5f-5r6w-p67r) — MCP Registry OCI ownership validation fail-open
-- [GHSA-hv85-774v-26fg](https://github.com/advisories/GHSA-hv85-774v-26fg) — Auth Fetch MCP SSRF and disk exfiltration
-- [GHSA-pqmg-rq46-vm4m](https://github.com/triggerdotdev/trigger.dev/security/advisories/GHSA-pqmg-rq46-vm4m) — Trigger.dev unauthenticated MCP transport
-- [GHSA-c9xm-49cp-xcr9](https://github.com/advisories/GHSA-c9xm-49cp-xcr9) and [GHSA-9g45-5xwm-f3wc](https://github.com/advisories/GHSA-9g45-5xwm-f3wc) — MCP Rust SDK OAuth request steering and cross-origin header leakage
-- [GHSA-7xxm-gqxv-ph3v](https://github.com/1Panel-dev/MaxKB/security/advisories/GHSA-7xxm-gqxv-ph3v) — MaxKB server-side request forgery
-- [GHSA-mrq8-fv7v-hhjg](https://github.com/advisories/GHSA-mrq8-fv7v-hhjg) and [GHSA-76pr-5669-3xf5](https://github.com/sooperset/mcp-atlassian/security/advisories/GHSA-76pr-5669-3xf5) — MCP Atlassian local-file access and OAuth backup permissions
-- [GHSA-6prh-2h8m-c8cw](https://github.com/modelcontextprotocol/typescript-sdk/security/advisories/GHSA-6prh-2h8m-c8cw) — MCP TypeScript SDK cross-origin redirect leakage
-
-Private or unpublished advisories are intentionally omitted until their maintainers publish them.
+Private, unpublished, uncredited, identity-ambiguous, and disputed-attribution records are intentionally excluded from this public-credit list.
 
 ## Research practice
 

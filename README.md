@@ -6,9 +6,9 @@ AI infrastructure and application security researcher focused on MCP/server-side
 
 ## Security research
 
-- **57 externally validated findings**, including **41 High/Critical outcomes**, using a conservative evidence-gated ledger.
+- **57 externally validated findings** in a conservative evidence-gated ledger. Severity is recorded per finding; I do not combine the ledger's High, High-ish, and Medium-High categories into one High/Critical total.
 - **18 directly attributable public records** across vendor advisories, security bulletins, releases, and maintainer-confirmed issues. The validated-findings and public-credit totals measure different things.
-- **AWS:** Publicly credited by AWS for a PostgreSQL MCP read-only enforcement bypass leading to OS command execution under specific elevated database-role prerequisites. AWS rates it Important; the linked GitHub advisory rates it Critical. [AWS-2026-104](https://aws.amazon.com/security/security-bulletins/2026-104-aws/) · [GHSA-fph8-pg5w-78fv](https://github.com/advisories/GHSA-fph8-pg5w-78fv).
+- **AWS:** Publicly credited by AWS for a PostgreSQL MCP read-only enforcement bypass leading to OS command execution under specific elevated database-role prerequisites. AWS rates it Important; the linked GitHub advisory rates it Critical. [AWS-2026-104](https://aws.amazon.com/security/security-bulletins/2026-104-aws/) / [GHSA-fph8-pg5w-78fv](https://github.com/advisories/GHSA-fph8-pg5w-78fv).
 - **IBM MCP Context Forge:** Publicly credited for a [RestrictedPython sandbox escape](https://github.com/IBM/mcp-context-forge/security/advisories/GHSA-xm98-3vcf-fph7), rated Critical for HTTP exposure and High for stdio. The project added [regression coverage](https://github.com/IBM/mcp-context-forge/compare/v1.0.1...v1.0.2). A second [published SSRF advisory](https://github.com/IBM/mcp-context-forge/security/advisories/GHSA-c7vv-9h9c-fvj4) credits me; its update narrows the claim: the REST tool path was not exploitable as filed, while Gateway/A2A paths were source-evident but not runtime-validated in that update.
 
 I count a result only after a maintainer, platform, published advisory, fix, or case trail validates it. Scanner output and unconfirmed submissions are not counted as wins.

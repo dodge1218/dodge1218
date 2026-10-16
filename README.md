@@ -7,11 +7,9 @@ AI infrastructure and application security researcher focused on MCP/server-side
 ## Security research
 
 - **57 externally validated findings**, including **41 High/Critical outcomes**, using a conservative evidence-gated ledger.
-- **16 directly attributable public records** across vendor advisories, security bulletins, releases, and maintainer-confirmed issues.
-- Ranked **#337 on the [Microsoft Security Response Center 2026 Q2 Points Leaderboard](https://www.microsoft.com/en-us/msrc/blog/2026/07/congratulations-to-the-top-msrc-2026-q2-security-researchers/)**.
-- **AWS Security confirmed six implemented fixes** across `awslabs/mcp`, including SQL execution bypass, sensitive-data exposure, authentication-header logging, Kubernetes apply bypass, resource mutation bypass, and arbitrary file write. See the [`awslabs/mcp` published advisory index](https://github.com/awslabs/mcp/security/advisories).
-- **IBM MCP Context Forge** added public regression coverage for my [Critical RestrictedPython sandbox escape](https://github.com/advisories/GHSA-xm98-3vcf-fph7); additional IBM work includes a [published SSRF advisory](https://github.com/IBM/mcp-context-forge/security/advisories/GHSA-c7vv-9h9c-fvj4).
-- **[Google PR #3219](https://github.com/googleapis/mcp-toolbox/pull/3219)** fixed a BigQuery/ClickHouse identifier-validation issue I reported.
+- **18 directly attributable public records** across vendor advisories, security bulletins, releases, and maintainer-confirmed issues. The validated-findings and public-credit totals measure different things.
+- **AWS:** Publicly credited by AWS for a PostgreSQL MCP read-only enforcement bypass leading to OS command execution under specific elevated database-role prerequisites. AWS rates it Important; the linked GitHub advisory rates it Critical. [AWS-2026-104](https://aws.amazon.com/security/security-bulletins/2026-104-aws/) · [GHSA-fph8-pg5w-78fv](https://github.com/advisories/GHSA-fph8-pg5w-78fv).
+- **IBM MCP Context Forge:** Publicly credited for a [RestrictedPython sandbox escape](https://github.com/IBM/mcp-context-forge/security/advisories/GHSA-xm98-3vcf-fph7), rated Critical for HTTP exposure and High for stdio. The project added [regression coverage](https://github.com/IBM/mcp-context-forge/compare/v1.0.1...v1.0.2). A second [published SSRF advisory](https://github.com/IBM/mcp-context-forge/security/advisories/GHSA-c7vv-9h9c-fvj4) credits me; its update narrows the claim: the REST tool path was not exploitable as filed, while Gateway/A2A paths were source-evident but not runtime-validated in that update.
 
 I count a result only after a maintainer, platform, published advisory, fix, or case trail validates it. Scanner output and unconfirmed submissions are not counted as wins.
 
@@ -35,6 +33,8 @@ These records directly name Ryan, `dodge1218`, or vonbrubeck as reporter, finder
 - [x64dbg MCP v1.0.8](https://github.com/SetsunaYukiOvO/x64dbg-mcp/releases/tag/v1.0.8) — browser-originated local MCP security flaw and shipped hardening
 - [DeepCode issue #128](https://github.com/HKUDS/DeepCode/issues/128) — unsafe shell execution in MCP command tools leading to sandbox hardening
 - [MariaDB MCP issue #55](https://github.com/MariaDB/mcp/issues/55) / [fix commit](https://github.com/MariaDB/mcp/commit/64876fb1a4cb81bf51564c46eb60401097c067cc) — sensitive `SHOW` variants bypassed the intended read-only policy
+- [IBM GHSA-xm98-3vcf-fph7](https://github.com/IBM/mcp-context-forge/security/advisories/GHSA-xm98-3vcf-fph7) — RestrictedPython sandbox escape in `python_sandbox_server`; HTTP exposure rated Critical, stdio rated High
+- [IBM GHSA-c7vv-9h9c-fvj4](https://github.com/IBM/mcp-context-forge/security/advisories/GHSA-c7vv-9h9c-fvj4) — SSRF via outbound redirects; advisory update records a withdrawn REST-path claim and limits remaining paths as described above
 
 Private, unpublished, uncredited, identity-ambiguous, and disputed-attribution records are intentionally excluded from this public-credit list.
 

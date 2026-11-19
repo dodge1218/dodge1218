@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/vonbrubeck-github-v-icon.png" alt="VonBrubeck V logo" width="160">
+</p>
+
 # Ryan Brubeck
 
 AI infrastructure and application security researcher focused on MCP/server-side tooling, agentic control planes, SSRF, authentication and authorization boundaries, unsafe execution, and coordinated disclosure.

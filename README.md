@@ -1,5 +1,7 @@
 <p align="center">
-  <img src="./assets/vonbrubeck-github-v-icon.png" alt="VonBrubeck V logo" width="160">
+  <a href="https://www.vonbrubeck.com">
+    <img src="./assets/vonbrubeck-github-readme-banner.png" alt="VonBrubeck" width="650">
+  </a>
 </p>
 
 # Ryan Brubeck
